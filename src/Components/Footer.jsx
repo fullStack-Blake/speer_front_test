@@ -51,6 +51,8 @@ const Span = styled.div`
 const Footer = () => {
   const [missedCall, setMissedCall] = useState(0);
   const [loading, setLoading] = useState(true);
+
+  // Count missed calls
   useEffect(() => {
     const countMissed = () => {
       feeds()

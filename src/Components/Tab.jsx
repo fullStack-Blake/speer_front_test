@@ -1,22 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const flexCentre = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Container = styled.div`
+  ${flexCentre}
   margin-right: 20px;
-  display: flex;
+
   padding: 2px;
   width: 140px;
-  justify-content: center;
   column-gap: 10px;
   /* border: 1px solid gray; */
   border-radius: 8px;
   color: white;
   background-color: #44707b;
   div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${flexCentre}
     width: 55px;
     height: 30px;
     text-align: center;

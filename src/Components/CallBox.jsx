@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 90%;
-  display: flex;
   border: 1px solid #b7b2a4;
   border-radius: 10px;
   padding: 10px;
+  width: 250px;
+  height: 30px;
+  display: flex;
   column-gap: 10px;
   align-items: center;
 `;
@@ -38,8 +39,6 @@ const Meridiem = styled.div`
   font-weight: bold;
   color: #b7b2a4;
   border: 0.3px solid #b7b2a4;
-  /* height: 20px;
-  width 28px; */
   text-align: center;
   border-radius: 3px;
 `;

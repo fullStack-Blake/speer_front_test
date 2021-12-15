@@ -31,6 +31,7 @@ const CallDate = ({ date, detail }) => {
   const hour = baseDate.getHours();
   const min = baseDate.getMinutes();
 
+  // Returns string when detail is true, otherwise Date to Group Calls
   return (
     <div>
       {detail ? (

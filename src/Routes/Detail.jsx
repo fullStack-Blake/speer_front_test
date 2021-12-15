@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { feedDetail, archiveFeed } from "../API.jsx";
-import CallDate from "../CallDate.jsx";
-import Category from "../Category.jsx";
+import { feedDetail, archiveFeed } from "../Components/API.jsx";
+import CallDate from "../Components/CallDate.jsx";
+import Category from "../Components/Category.jsx";
 
 const Container = styled.div`
   font-family: "Baloo Bhaijaan 2", cursive;

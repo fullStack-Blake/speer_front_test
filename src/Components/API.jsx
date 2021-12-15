@@ -10,3 +10,4 @@ export const archiveFeed = (id, toggle) =>
   api.post(`activities/${id}`, {
     is_archived: toggle,
   });
+export const reset = () => api.get("reset");

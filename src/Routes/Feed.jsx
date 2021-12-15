@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from "react";
-import CallBox from "../CallBox.jsx";
-import styled from "styled-components";
-import CallDate from "../CallDate.jsx";
+import CallBox from "../Components/CallBox.jsx";
+import styled, { css } from "styled-components";
+import CallDate from "../Components/CallDate.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { feeds } from "../API.jsx";
+import { feeds } from "../Components/API.jsx";
 
-const Container = styled.div``;
-const Calls = styled.div`
-  width: 100%;
+const flexCentre = css`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+const Container = styled.div``;
+const Calls = styled.div`
+  ${flexCentre}
+  width: 100%;
+  flex-direction: column;
   row-gap: 15px;
   margin-bottom: 15px;
+  a {
+    ${flexCentre}
+  }
 `;
 const DLink = styled(Link)`
   text-decoration: none;
@@ -27,7 +33,7 @@ const DLink = styled(Link)`
 `;
 
 //
-const Feed = ({ isFeed = true }) => {
+const Feed = ({ isFeed = true, reload = true }) => {
   const [feed, setFeed] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -69,7 +75,7 @@ const Feed = ({ isFeed = true }) => {
     };
 
     fetchFeed();
-  }, []);
+  }, [reload]);
 
   return (
     <Container>

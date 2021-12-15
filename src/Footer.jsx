@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { feeds } from "./API.jsx";
 
 const Container = styled.div`
   position: absolute;
@@ -12,18 +13,64 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
 `;
-const Icon = styled.div``;
+const Icon = styled.div`
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 const Phone = styled.div`
   margin-top: -50px;
   background-color: white;
   border-radius: 50%;
   border: 2px solid #9fd6d2;
   padding: 7px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
+const Span = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+  width: 20px;
+  height: 15px;
+  text-align: center;
+  border-radius: 6px;
+  margin-right: -8px;
+  margin-top: -5px;
+`;
+
 const Footer = () => {
+  const [missedCall, setMissedCall] = useState(0);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const countMissed = () => {
+      feeds()
+        .then((res) => res.data)
+        .then((res) => {
+          const addNum = res.filter((res) => res.call_type == "missed").length;
+          setMissedCall(addNum);
+          setLoading(false);
+        });
+    };
+
+    countMissed();
+  }, [missedCall]);
+
   return (
     <Container>
       <Icon>
+        {missedCall && missedCall > 0 && !loading ? (
+          <Span>{missedCall}</Span>
+        ) : null}
         <img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png" />
       </Icon>
       <Icon>

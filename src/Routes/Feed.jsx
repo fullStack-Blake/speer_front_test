@@ -26,15 +26,18 @@ const DLink = styled(Link)`
   }
 `;
 
+//
 const Feed = ({ isFeed = true }) => {
   const [feed, setFeed] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Group unarchived calls by date
   useEffect(() => {
     const fetchFeed = () => {
       feeds()
         .then((res) => res.data)
         // Feed only shows non-archived calls
+        // If isFeed is false, return Archived calls
         .then((res) =>
           res.filter((res) => (isFeed ? !res.is_archived : res.is_archived))
         )

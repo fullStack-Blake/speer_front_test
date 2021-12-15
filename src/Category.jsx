@@ -22,6 +22,9 @@ const Info = styled.div`
 `;
 
 const Category = ({ name, info }) => {
+  if (!name) name = "Unknown";
+  if (!info) info = "Unknown";
+  console.log(info);
   return (
     <Container>
       <Name>{name}</Name>

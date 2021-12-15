@@ -76,7 +76,8 @@ const Detail = () => {
         <DetailBox>
           <UserInfo>
             {/* If call from name, display first character. Otherwise Icon */}
-            {isNaN(detail.from.slice(0, 1)) ? (
+            {detail.from.slice(0, 1) !== "+" &&
+            isNaN(detail.from.slice(0, 1)) ? (
               <Photo>{detail.from.slice(0, 1)}</Photo>
             ) : (
               <Photo>

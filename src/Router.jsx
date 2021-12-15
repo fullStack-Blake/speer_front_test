@@ -1,9 +1,9 @@
 import React from "react";
 import { HashRouter, Route, Redirect, Switch } from "react-router-dom";
 import Header from "./Header.jsx";
-import Feed from "./Feed.jsx";
-import Archive from "./Archive.jsx";
-import Detail from "./Detail.jsx";
+import Feed from "./Routes/Feed.jsx";
+import Archive from "./Routes/Archive.jsx";
+import Detail from "./Routes/Detail.jsx";
 
 const Router = () => {
   return (

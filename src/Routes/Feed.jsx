@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import CallBox from "./CallBox.jsx";
+import CallBox from "../CallBox.jsx";
 import styled from "styled-components";
-import CallDate from "./CallDate.jsx";
+import CallDate from "../CallDate.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { feeds } from "./API.jsx";
+import { feeds } from "../API.jsx";
 
 const Container = styled.div``;
 const Calls = styled.div`
@@ -12,6 +12,7 @@ const Calls = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   row-gap: 15px;
   margin-bottom: 15px;
 `;
@@ -59,7 +60,6 @@ const Feed = ({ isFeed = true }) => {
           return newArray;
         })
         .then((res) => {
-          console.log(res);
           setFeed(res);
           setLoading(false);
         });

@@ -3,7 +3,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
   font-family: "Baloo Bhaijaan 2", cursive;
-  font-size: 1.2em;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #b7b2a4;
 `;
 
 const CallDate = ({ date, detail }) => {
@@ -29,22 +32,15 @@ const CallDate = ({ date, detail }) => {
   const min = baseDate.getMinutes();
 
   return (
-    <Container>
+    <div>
       {detail ? (
-        <div>
-          <div>
-            {year} {month} {day}
-          </div>
-          <div>
-            {hour}:{min}
-          </div>
-        </div>
+        `${year} ${month} ${day} ${hour}:${min}`
       ) : (
-        <div>
+        <Container>
           {month.toUpperCase()}, {day}, {year}
-        </div>
+        </Container>
       )}
-    </Container>
+    </div>
   );
 };
 

@@ -6,9 +6,9 @@ const Container = styled.div`
   margin-right: 20px;
   display: flex;
   padding: 2px;
-  width: 110px;
+  width: 140px;
   justify-content: center;
-  column-gap: 3px;
+  column-gap: 10px;
   /* border: 1px solid gray; */
   border-radius: 8px;
   color: white;
@@ -17,7 +17,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    width: 55px;
     height: 30px;
     text-align: center;
     /* border: 1px solid #54494B; */

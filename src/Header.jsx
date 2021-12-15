@@ -8,6 +8,7 @@ const Container = styled.div`
   justify-content: space-between;
   font-family: "Baloo Bhaijaan 2", cursive;
   font-size: 1.2em;
+  margin-bottom: 20px;
 `;
 const LogoContainer = styled.div`
   margin-left: 10px;

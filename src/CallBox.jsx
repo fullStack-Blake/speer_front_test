@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 90%;
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid #b7b2a4;
   border-radius: 10px;
   padding: 10px;
   column-gap: 10px;
@@ -21,18 +21,23 @@ const ImageContainer = styled.div`
 const CallInfo = styled.div`
   width: 150px;
 `;
-const To = styled.div`
-  font-size: 0.8em;
-`;
 const From = styled.div`
   font-weight: bold;
   font-size: 1.1em;
 `;
-const Time = styled.div``;
-const Meridiem = styled.div`
-  padding: 3px;
+const To = styled.div`
   font-size: 0.8em;
-  border: 0.3px solid gray;
+  color: #b7b2a4;
+`;
+const Time = styled.div`
+  color: #b7b2a4;
+`;
+const Meridiem = styled.div`
+  padding: 3px 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #b7b2a4;
+  border: 0.3px solid #b7b2a4;
   /* height: 20px;
   width 28px; */
   text-align: center;
